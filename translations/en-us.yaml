@@ -1,0 +1,3 @@
+errors:
+  blank: 'This thing is blank'
+  email: 'Not an email'
