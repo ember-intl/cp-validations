@@ -4,7 +4,7 @@ Adds support for ember-intl in ember-cp-validations
 
 ## Installation
 
-* `ember install ember-intl-cl-validations`
+* `ember install ember-intl-cp-validations`
 
 ## Configuring
 
