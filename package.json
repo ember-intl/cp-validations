@@ -1,6 +1,6 @@
 {
   "name": "ember-intl-cp-validations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ember-intl support for ember-cp-validations",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,10 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jasonmit/ember-intl-cp-validations.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
