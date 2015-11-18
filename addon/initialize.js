@@ -13,7 +13,7 @@ export default function() {
       let intl = this.get('intl');
 
       if (intl && intl.exists(key)) {
-        return intl.formatMessage(intl.findTranslationByKey(key), context);
+        return intl.t(key, context);
       }
 
       return this._super(...arguments);
@@ -24,7 +24,7 @@ export default function() {
       let intl = this.get('intl');
 
       if (intl && intl.exists(key)) {
-        return this.formatMessage(intl.formatMessage(intl.findTranslationByKey(key), context));
+        return this.formatMessage(intl.t(key, context));
       }
 
       logger.warn(`[ember-intl-cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`);
