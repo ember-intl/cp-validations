@@ -1,6 +1,10 @@
 # ember-intl-cp-validations
 
-Adds support for ember-intl in ember-cp-validations
+Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
+
+## Requirements
+
+* >= [ember-intl](https://github.com/yahoo/ember-intl) 2.0.0-rc.5
 
 ## Installation
 
@@ -57,7 +61,7 @@ To change the errors prefix key from `errors` to any other key, such as `validat
 import ValidatorsMessages from 'ember-cp-validations/validators/messages';
 
 export default ValidatorsMessages.extend({
-	prefix: 'validationErrors'
+  prefix: 'validationErrors'
 });
 ```
 
