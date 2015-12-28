@@ -9,8 +9,8 @@ export default function() {
     prefix: 'errors',
 
     getDescriptionFor(attribute, context = {}) {
-      let key = `${this.get('prefix')}.description`;
-      let intl = this.get('intl');
+      const key = `${this.get('prefix')}.description`;
+      const intl = this.get('intl');
 
       if (intl && intl.exists(key)) {
         return intl.t(key, context);
@@ -20,8 +20,8 @@ export default function() {
     },
 
     getMessageFor(type, context = {}) {
-      let key = `${this.get('prefix')}.${type}`;
-      let intl = this.get('intl');
+      const key = `${this.get('prefix')}.${type}`;
+      const intl = this.get('intl');
 
       if (intl && intl.exists(key)) {
         return this.formatMessage(intl.t(key, context));
