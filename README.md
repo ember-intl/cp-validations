@@ -2,6 +2,8 @@
 
 Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
 
+Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/jasonmit/ember-i18n-cp-validations)
+
 ## Requirements
 
 * >= [ember-intl](https://github.com/yahoo/ember-intl) 2.0.0-rc.5
