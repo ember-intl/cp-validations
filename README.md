@@ -51,6 +51,37 @@ errors:
   url: "{description} must be a valid url"
 ```
 
+### Translating Validator description
+
+To translate the description of a Validator specify the `descriptionKey` to match a key in your translations.
+
+```js
+// app/models/user.js
+
+import { validator, buildValidations } from 'ember-cp-validations';
+
+const Validations = buildValidations({
+  username: validator('presence', {
+    presence: true,
+    descriptionKey: 'key.for.username'
+  })
+});
+```
+
+```yml
+# translations/en-us.yml
+key:
+  for:
+    username: 'Username'
+```
+
+```yml
+# translations/sv-se.yml
+key:
+  for:
+    username: 'Användarnamn'
+```
+
 ### Customizing the prefix
 
 To change the errors prefix key from `errors` to any other key, such as `validationErrors` you simply add the following to `app/validators/messages.js`.  Now just ammend your translation files to be nested under the `validationErrors` object instead of `errors`.
