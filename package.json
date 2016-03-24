@@ -1,6 +1,6 @@
 {
   "name": "ember-intl-cp-validations",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "ember-intl support for ember-cp-validations",
   "directories": {
     "doc": "doc",
