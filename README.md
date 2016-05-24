@@ -70,20 +70,6 @@ const Validations = buildValidations({
 });
 ```
 
-```yml
-# translations/en-us.yml
-key:
-  for:
-    username: 'Username'
-```
-
-```yml
-# translations/sv-se.yml
-key:
-  for:
-    username: 'Användarnamn'
-```
-
 ### Customizing the prefix
 
 To change the errors prefix key from `errors` to any other key, such as `validationErrors` you simply add the following to `app/validators/messages.js`.  Now just ammend your translation files to be nested under the `validationErrors` object instead of `errors`.
@@ -96,6 +82,37 @@ import ValidatorsMessages from 'ember-cp-validations/validators/messages';
 export default ValidatorsMessages.extend({
   prefix: 'validationErrors'
 });
+```
+
+### Overriding default translation key
+
+By default, translations will be resolved to `validatorPrefix.validatorType`.  If you need to override this functionality entirely and specify your own message key, you can do so with `messageKey` on the validator object.
+
+```js
+// app/models/user.js
+
+import { validator, buildValidations } from 'ember-cp-validations';
+
+const Validations = buildValidations({
+  username: validator('presence', {
+    presence: true,
+    messageKey: 'username.missing'
+  })
+});
+```
+
+```yml
+# translations/en-us.yml
+key:
+  for:
+    username: 'Username'
+```
+
+```yml
+# translations/sv-se.yml
+key:
+  for:
+    username: 'Användarnamn'
 ```
 
 ## Testing

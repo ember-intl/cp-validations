@@ -32,7 +32,7 @@ export default function() {
     },
 
     getMessageFor(type, options = {}) {
-      const key = `${get(this, 'prefix')}.${type}`;
+      const key = get(options, 'messageKey') || `${this.get('prefix')}.${type}`;
       const intl = get(this, 'intl');
 
       if (intl && intl.exists(key)) {

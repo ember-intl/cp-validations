@@ -1,5 +1,7 @@
 {
   "predef": [
+    "ok",
+    "equal",
     "document",
     "window",
     "location",

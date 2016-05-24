@@ -1,9 +1,13 @@
 <h2 id="title">ember-intl-cp-validations</h2>
 
-{{model.validations.attrs.email.message}}
+<div class="email-validation">{{model.validations.attrs.email.message}}</div>
+<div class="emailConfirmation-validation">{{model.validations.attrs.emailConfirmation.message}}</div>
+<div class="password-validation">{{model.validations.attrs.password.message}}</div>
+<div class="passwordConfirmation-validation">{{model.validations.attrs.passwordConfirmation.message}}</div>
+<div class="username-validation">{{model.validations.attrs.username.message}}</div>
 
-{{input value=model.email}}
-
-{{model.validations.attrs.password.message}}
-
-{{input value=model.password}}
+{{input id="email" value=model.email}}
+{{input id="emailConfirmation" value=model.emailConfirmation}}
+{{input id="password" value=model.password}}
+{{input id="passwordConfirmation" value=model.passwordConfirmation}}
+{{input id="username" value=model.username}}
