@@ -1,5 +1,10 @@
 # ember-intl-cp-validations
 
+[![npm Version][npm-badge]][npm]
+[![Build Status][travis-badge]][travis]
+[![Ember Observer Score](http://emberobserver.com/badges/ember-intl-cp-validations.svg)](http://emberobserver.com/addons/ember-intl-cp-validations)
+[![Ember badge][ember-badge]][embadge]
+
 Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
 
 Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/jasonmit/ember-i18n-cp-validations)
@@ -148,3 +153,10 @@ moduleForComponent('x-product', 'XProductComponent', {
 * `ember build`
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+
+[npm]: https://www.npmjs.org/package/ember-intl-cp-validations
+[npm-badge]: https://img.shields.io/npm/v/ember-intl-cp-validations.svg?style=flat-square
+[travis]: https://travis-ci.org/jasonmit/ember-intl-cp-validations
+[travis-badge]: https://img.shields.io/travis/jasonmit/ember-intl-cp-validations/master.svg?style=flat-square
+[embadge]: http://embadge.io/
+[ember-badge]: http://embadge.io/v1/badge.svg?start=1.13.0
