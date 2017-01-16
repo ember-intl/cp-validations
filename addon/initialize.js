@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ValidatorsMessages from 'ember-cp-validations/validators/messages';
 
-const { Logger:logger, get, isEmpty } = Ember;
+const { warn, get, isEmpty } = Ember;
 
 export default function() {
   ValidatorsMessages.reopen({
@@ -24,7 +24,9 @@ export default function() {
         if (intl.exists(key)) {
           return intl.t(key, options);
         } else if (foundCustom) {
-          logger.warn(`Custom descriptionKey '${key}' provided but does not exist in intl translations.`);
+          warn(`Custom descriptionKey '${key}' provided but does not exist in intl translations.`, false, {
+            id: 'ember-intl-cp-validations-missing-custom-key'
+          });
         }
       }
 
@@ -39,7 +41,9 @@ export default function() {
         return this.formatMessage(intl.t(key, options));
       }
 
-      logger.warn(`[ember-intl-cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`);
+      warn(`[ember-intl-cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`, false, {
+        id: 'ember-intl-cp-validations-missing-translation'
+      });
 
       return this._super(...arguments);
     }
