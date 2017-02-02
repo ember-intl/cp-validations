@@ -77,12 +77,12 @@ const Validations = buildValidations({
 
 ### Customizing the prefix
 
-To change the errors prefix key from `errors` to any other key, such as `validationErrors` you simply add the following to `app/validators/messages.js`.  Now just ammend your translation files to be nested under the `validationErrors` object instead of `errors`.
+To change the errors prefix key from `errors` to any other key, such as `validationErrors` you simply add the following to `app/validators/messages.js`.  Now just amend your translation files to be nested under the `validationErrors` object instead of `errors`.
 
 ```js
 // app/validators/messages.js
 
-import ValidatorsMessages from 'ember-cp-validations/validators/messages';
+import ValidatorsMessages from 'ember-intl-cp-validations/validators/messages';
 
 export default ValidatorsMessages.extend({
   prefix: 'validationErrors'
@@ -120,22 +120,22 @@ key:
     username: 'Användarnamn'
 ```
 
-## Testing
+### Disabling Missing Translation Warnings
 
-A common issue, across every ember project relying on initializers, is how do you tests code dependent on an initializer being invoked.
-
-To work around this, invoke the initializer during the `setup` for your test dependent on the initializer.
+To suppress console warnings for missing translations, you can do so by setting `intl_cp_validations.suppressWarnings` in `config/environment`;
 
 ```js
-import { moduleForComponent, test } from 'ember-qunit';
-import initialize from 'ember-intl-cp-validations/initialize';
+// config/environment.js
+module.exports = function(environment) {
+  const ENV = {};
 
-moduleForComponent('x-product', 'XProductComponent', {
-  integration: true,
-  setup() {
-    initialize(this);
+  if (environment === 'test') {
+    ENV.intl_cp_validations = ENV.intl_cp_validations || {};
+    ENV.intl_cp_validations.suppressWarnings = true;
   }
-});
+
+  return ENV;
+}
 ```
 
 ## Running
