@@ -19,7 +19,7 @@ export default ValidatorsMessages.extend({
   },
 
   _warn(msg, meta) {
-    if (get(this._config, 'intl_cp_validations.suppressWarnings')) {
+    if (this._config && get(this._config, 'intl_cp_validations.suppressWarnings')) {
       return;
     }
 
@@ -52,7 +52,7 @@ export default ValidatorsMessages.extend({
   },
 
   getMessageFor(type, options = {}) {
-    let key = get(options, 'messageKey') || `${this.get('prefix')}.${type}`;
+    let key = get(options, 'messageKey') || `${get(this, 'prefix')}.${type}`;
     let intl = get(this, 'intl');
 
     if (intl && intl.exists(key)) {
