@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/jasonmit/ember-intl-cp-validations.git"
+    "url": "http://github.com/ember-intl/ember-intl-cp-validations.git"
   },
   "engines": {
     "node": ">= 0.10.0"
