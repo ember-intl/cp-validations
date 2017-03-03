@@ -1,5 +1,7 @@
 # ember-intl-cp-validations
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ember-intl/ember-intl-cp-validations.svg)](https://greenkeeper.io/)
+
 [![npm Version][npm-badge]][npm]
 [![Build Status][travis-badge]][travis]
 [![Ember Observer Score](http://emberobserver.com/badges/ember-intl-cp-validations.svg)](http://emberobserver.com/addons/ember-intl-cp-validations)
