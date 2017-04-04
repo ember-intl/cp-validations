@@ -7,7 +7,7 @@
 [![Ember Observer Score](http://emberobserver.com/badges/ember-intl-cp-validations.svg)](http://emberobserver.com/addons/ember-intl-cp-validations)
 [![Ember badge][ember-badge]][embadge]
 
-Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
+Adds internationalization support for [ember-intl](https://github.com/yahoo/ember-intl) within ember-cp-validations
 
 Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/jasonmit/ember-i18n-cp-validations)
 
