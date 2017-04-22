@@ -51,7 +51,7 @@
     "intl"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.6",
+    "ember-cli-babel": "^6.0.0",
     "ember-getowner-polyfill": "^1.2.2"
   },
   "ember-addon": {
