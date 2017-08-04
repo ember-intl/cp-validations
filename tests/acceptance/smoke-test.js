@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { module, test } from 'qunit';
+import { module, test, ok } from 'qunit';
 import startApp from '../helpers/start-app';
 
 let application;
@@ -84,7 +84,7 @@ test('translations with descriptionKey', (assert) => {
   visit('/');
 
   andThen(() => {
-    contains('.username-validation', `oops, USERNAME! length is invalid`, assert);
+    contains('.username-validation', `oops, Username length is invalid`, assert);
   });
 });
 
@@ -92,6 +92,6 @@ test('translation with messageKey', (assert) => {
   visit('/');
 
   andThen(() => {
-    contains('.passwordConfirmation-validation', `Take care! Passwords doesn't match`, assert);
+    contains('.passwordConfirmation-validation', `Passwords doesn't match`, assert);
   });
 });
