@@ -11,12 +11,12 @@ Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/
 
 ## Requirements
 
-* [ember-intl](https://github.com/yahoo/ember-intl) >= 2.0.0-rc.5
-* ember-cp-validations >= 2 || >= 3
+* [`ember-intl`](https://github.com/yahoo/ember-intl) >= 2.0.0-rc.5
+* `ember-cp-validations` >= 2
 
 ## Installation
 
-* `ember install ember-intl-cp-validations`
+* `ember install @ember-intl/cp-validations`
 
 ## Configuring
 
