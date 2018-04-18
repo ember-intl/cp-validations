@@ -16,7 +16,7 @@ Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/
 
 ## Installation
 
-* `ember install ember-intl-cp-validations`
+* `ember install @ember-intl/cp-validations`
 
 ## Configuring
 
