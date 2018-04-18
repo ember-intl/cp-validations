@@ -18,12 +18,12 @@ export default ValidatorsMessages.extend({
     }
   },
 
-  _warn(msg, meta) {
+  _warn(msg, test, meta) {
     if (this._config && get(this._config, 'intl_cp_validations.suppressWarnings')) {
       return;
     }
 
-    this.warn(msg, meta);
+    this.warn(msg, test, meta);
   },
 
   getDescriptionFor(attribute, options = {}) {
