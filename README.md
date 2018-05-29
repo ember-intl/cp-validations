@@ -3,7 +3,6 @@
 [![npm Version][npm-badge]][npm]
 [![Build Status][travis-badge]][travis]
 [![Ember Observer Score](http://emberobserver.com/badges/ember-intl-cp-validations.svg)](http://emberobserver.com/addons/ember-intl-cp-validations)
-[![Ember badge][ember-badge]][embadge]
 
 Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
 
@@ -159,5 +158,3 @@ For more information on using ember-cli, visit [http://www.ember-cli.com/](http:
 [npm-badge]: https://img.shields.io/npm/v/@ember-intl/cp-validations.svg?style=flat-square
 [travis]: https://travis-ci.org/ember-intl/cp-validations
 [travis-badge]: https://img.shields.io/travis/ember-intl/cp-validations/master.svg?style=flat-square
-[embadge]: http://embadge.io/
-[ember-badge]: http://embadge.io/v1/badge.svg?start=1.13.0
