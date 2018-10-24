@@ -75,6 +75,20 @@ const Validations = buildValidations({
 });
 ```
 
+```yml
+# translations/en-us.yml
+key:
+  for:
+    username: 'Username'
+```
+
+```yml
+# translations/sv-se.yml
+key:
+  for:
+    username: 'Användarnamn'
+```
+
 ### Customizing the prefix
 
 To change the errors prefix key from `errors` to any other key, such as `validationErrors` you simply add the following to `app/validators/messages.js`.  Now just amend your translation files to be nested under the `validationErrors` object instead of `errors`.
@@ -108,16 +122,14 @@ const Validations = buildValidations({
 
 ```yml
 # translations/en-us.yml
-key:
-  for:
-    username: 'Username'
+username:
+  missing: '{description} is missing'
 ```
 
 ```yml
 # translations/sv-se.yml
-key:
-  for:
-    username: 'Användarnamn'
+username:
+  missing: '{description} saknas'
 ```
 
 ### Disabling Missing Translation Warnings
