@@ -2,7 +2,7 @@
 
 [![npm Version][npm-badge]][npm]
 [![Build Status][travis-badge]][travis]
-[![Ember Observer Score](http://emberobserver.com/badges/ember-intl-cp-validations.svg)](http://emberobserver.com/addons/ember-intl-cp-validations)
+[![Ember Observer Score](https://emberobserver.com/badges/-ember-intl-cp-validations.svg)](https://emberobserver.com/addons/@ember-intl/cp-validations)
 
 Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
 
