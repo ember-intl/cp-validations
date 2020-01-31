@@ -168,5 +168,5 @@ For more information on using ember-cli, visit [http://www.ember-cli.com/](http:
 
 [npm]: https://www.npmjs.org/package/@ember-intl/cp-validations
 [npm-badge]: https://img.shields.io/npm/v/@ember-intl/cp-validations.svg?style=flat-square
-[travis]: https://travis-ci.org/ember-intl/cp-validations
+[travis]: https://travis-ci.com/ember-intl/cp-validations
 [travis-badge]: https://img.shields.io/travis/ember-intl/cp-validations/master.svg?style=flat-square
