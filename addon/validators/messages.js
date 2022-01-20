@@ -19,7 +19,10 @@ export default ValidatorsMessages.extend({
   },
 
   _warn(msg, test, meta) {
-    if (this._config && get(this._config, 'intl_cp_validations.suppressWarnings')) {
+    if (
+      this._config &&
+      get(this._config, 'intl_cp_validations.suppressWarnings')
+    ) {
       return;
     }
 
@@ -42,9 +45,13 @@ export default ValidatorsMessages.extend({
       if (intl.exists(key)) {
         return intl.t(key, options);
       } else if (foundCustom) {
-        this._warn(`Custom descriptionKey '${key}' provided but does not exist in intl translations.`, false, {
-          id: 'ember-intl-cp-validations-missing-custom-key'
-        });
+        this._warn(
+          `Custom descriptionKey '${key}' provided but does not exist in intl translations.`,
+          false,
+          {
+            id: 'ember-intl-cp-validations-missing-custom-key',
+          }
+        );
       }
     }
 
@@ -59,10 +66,14 @@ export default ValidatorsMessages.extend({
       return this.formatMessage(intl.t(key, options));
     }
 
-    this._warn(`[ember-intl-cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`, false, {
-      id: 'ember-intl-cp-validations-missing-translation'
-    });
+    this._warn(
+      `[ember-intl-cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`,
+      false,
+      {
+        id: 'ember-intl-cp-validations-missing-translation',
+      }
+    );
 
     return this._super(...arguments);
-  }
+  },
 });

@@ -4,7 +4,7 @@ import startApp from '../helpers/start-app';
 
 let application;
 
-const { run:emberRun, RSVP } = Ember;
+const { run: emberRun, RSVP } = Ember;
 
 function contains(selector, string, assert) {
   const element = find(selector)[0];
@@ -25,7 +25,7 @@ module('Acceptance: Smoke', {
     if (application) {
       emberRun(application, 'destroy');
     }
-  }
+  },
 });
 
 test('basic translations', (assert) => {
@@ -35,12 +35,16 @@ test('basic translations', (assert) => {
   andThen(() => {
     contains('.email-validation', `This field can't be blank`, assert);
 
-    fillIn('#email', 'you@example.com').then(function() {
+    fillIn('#email', 'you@example.com').then(function () {
       contains('.email-validation', ``, assert);
     });
 
-    fillIn('#email', 'invalid-email').then(function() {
-      contains('.email-validation', `This field must be a valid email address`, assert);
+    fillIn('#email', 'invalid-email').then(function () {
+      contains(
+        '.email-validation',
+        `This field must be a valid email address`,
+        assert
+      );
     });
   });
 });
@@ -53,7 +57,7 @@ test('inline message', (assert) => {
   andThen(() => {
     contains('.password-validation', `This field can't be blank`, assert);
 
-    fillIn('#password', 'err').then(function() {
+    fillIn('#password', 'err').then(function () {
       contains('.password-validation', `oops, length is invalid`, assert);
       done();
     });
@@ -68,13 +72,21 @@ test('translations with custom description', (assert) => {
 
   andThen(() => {
     contains('.email-validation', `This field can't be blank`, assert);
-    contains('.emailConfirmation-validation', `This field can't be blank`, assert);
+    contains(
+      '.emailConfirmation-validation',
+      `This field can't be blank`,
+      assert
+    );
 
     RSVP.all([
       fillIn('#email', 'foo@bar.com'),
-      fillIn('#emailConfirmation', 'xx@bar.com')
-    ]).then(function() {
-      contains('.emailConfirmation-validation', `Email addresses doesn't match email`, assert);
+      fillIn('#emailConfirmation', 'xx@bar.com'),
+    ]).then(function () {
+      contains(
+        '.emailConfirmation-validation',
+        `Email addresses doesn't match email`,
+        assert
+      );
       done();
     });
   });
@@ -84,7 +96,11 @@ test('translations with descriptionKey', (assert) => {
   visit('/');
 
   andThen(() => {
-    contains('.username-validation', `oops, Username length is invalid`, assert);
+    contains(
+      '.username-validation',
+      `oops, Username length is invalid`,
+      assert
+    );
   });
 });
 
@@ -92,6 +108,10 @@ test('translation with messageKey', (assert) => {
   visit('/');
 
   andThen(() => {
-    contains('.passwordConfirmation-validation', `Passwords doesn't match`, assert);
+    contains(
+      '.passwordConfirmation-validation',
+      `Passwords doesn't match`,
+      assert
+    );
   });
 });
