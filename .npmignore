@@ -31,6 +31,9 @@
 /yarn.lock
 .gitkeep
 
+# https://github.com/ds300/patch-package#dev-only-patches
+/patches/
+
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
