@@ -40,7 +40,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: 6
+          node-version: 8
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
       - name: Browser Tests
