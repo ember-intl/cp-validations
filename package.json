@@ -77,6 +77,9 @@
     "qunit-dom": "^2.0.0",
     "webpack": "^5.66.0"
   },
+  "resolutions": {
+    "ember-cli-babel": "^7.26.11"
+  },
   "engines": {
     "node": "12.* || 14.* || >= 16"
   },
