@@ -31,15 +31,32 @@ index 0000000..4d14b95
 +
 +For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 \ No newline at end of file
+diff --git a/node_modules/ember-cp-validations/addon/-private/result.js b/node_modules/ember-cp-validations/addon/-private/result.js
+index a93edd0..c722203 100644
+--- a/node_modules/ember-cp-validations/addon/-private/result.js
++++ b/node_modules/ember-cp-validations/addon/-private/result.js
+@@ -8,12 +8,11 @@ import EmberObject, {
+   set,
+   get
+ } from '@ember/object';
++import { readOnly } from '@ember/object/computed';
+ import ResultCollection from '../validations/result-collection';
+ import WarningResultCollection from '../validations/warning-result-collection';
+ import InternalResultObject from './internal-result-object';
+ 
+-const { readOnly } = computed;
+-
+ /**
+  * __PRIVATE__
+  *
 diff --git a/node_modules/ember-cp-validations/addon/.DS_Store b/node_modules/ember-cp-validations/addon/.DS_Store
 new file mode 100644
-index 0000000..9e27f71
-Binary files /dev/null and b/node_modules/ember-cp-validations/addon/.DS_Store differ
+index 0000000..e69de29
 diff --git a/node_modules/ember-cp-validations/addon/utils/utils.js b/node_modules/ember-cp-validations/addon/utils/utils.js
-index 8ea8776..bb8cd72 100644
+index 8ea8776..acec62c 100644
 --- a/node_modules/ember-cp-validations/addon/utils/utils.js
 +++ b/node_modules/ember-cp-validations/addon/utils/utils.js
-@@ -1,15 +1,13 @@
+@@ -1,17 +1,11 @@
  import ArrayProxy from '@ember/array/proxy';
  import ObjectProxy from '@ember/object/proxy';
  import { assign } from '@ember/polyfills';
@@ -48,15 +65,49 @@ index 8ea8776..bb8cd72 100644
  import EmberObject, { get } from '@ember/object';
  import { typeOf } from '@ember/utils';
  import { A as emberArray, isArray } from '@ember/array';
-+import DS from 'ember-data';
- 
- import Ember from 'ember';
+-
+-import Ember from 'ember';
 -import requireModule from 'ember-require-module';
 -
 -const DS = requireModule('ember-data');
+-
+-const { canInvoke } = Ember;
++import DS from 'ember-data';
  
- const { canInvoke } = Ember;
+ export { getDependentKeys, isDescriptor } from '../-private/ember-internals';
  
+@@ -32,7 +26,7 @@ export function isProxy(o) {
+ }
+ 
+ export function isPromise(p) {
+-  return !!(p && canInvoke(p, 'then'));
++  return typeof p?.then === 'function';
+ }
+ 
+ export function isDsModel(o) {
+diff --git a/node_modules/ember-cp-validations/addon/validations/validator.js b/node_modules/ember-cp-validations/addon/validations/validator.js
+index 4442690..42d2578 100644
+--- a/node_modules/ember-cp-validations/addon/validations/validator.js
++++ b/node_modules/ember-cp-validations/addon/validations/validator.js
+@@ -1,5 +1,5 @@
+ import { isNone } from '@ember/utils';
+-import { deprecate } from '@ember/application/deprecations';
++import { deprecate } from '@ember/debug';
+ 
+ /**
+  * @module Validators
+@@ -205,9 +205,9 @@ import { deprecate } from '@ember/application/deprecations';
+  * @submodule Common Options
+  */
+ 
+-export default function(arg1, options) {
++export default function (arg1, options) {
+   let props = {
+-    options: isNone(options) ? {} : options
++    options: isNone(options) ? {} : options,
+   };
+ 
+   if (typeof arg1 === 'function') {
 diff --git a/node_modules/ember-cp-validations/addon/validators/date.js b/node_modules/ember-cp-validations/addon/validators/date.js
 index e7239e8..07d7910 100755
 --- a/node_modules/ember-cp-validations/addon/validators/date.js
