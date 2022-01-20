@@ -1,28 +1,32 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('ember-intl-cp-validations@validator:messages', 'Unit | Validators | messages', {
-  unit: true,
-  needs: [
-    'service:intl',
-    'config:environment',
-    'translation:en-us',
-    'cldr:en',
-    'ember-intl@adapter:default'
-  ]
-});
+moduleFor(
+  'ember-intl-cp-validations@validator:messages',
+  'Unit | Validators | messages',
+  {
+    unit: true,
+    needs: [
+      'service:intl',
+      'config:environment',
+      'translation:en-us',
+      'cldr:en',
+      'ember-intl@adapter:default',
+    ],
+  }
+);
 
-test('it exists', function(assert) {
+test('it exists', function (assert) {
   assert.expect(1);
   assert.ok(this.subject());
 });
 
-test('suppressWarnings set to true', function(assert) {
+test('suppressWarnings set to true', function (assert) {
   assert.expect(1);
 
   this.register('config:environment', {
     intl_cp_validations: {
-      suppressWarnings: true
-    }
+      suppressWarnings: true,
+    },
   });
 
   this.inject.service('intl');
@@ -32,14 +36,14 @@ test('suppressWarnings set to true', function(assert) {
   const instance = this.subject({
     warn() {
       triggered = true;
-    }
+    },
   });
 
   instance.getMessageFor('foobarbaz');
-  assert.ok(!triggered);
+  assert.notOk(triggered);
 });
 
-test('suppressWarnings unset', function(assert) {
+test('suppressWarnings unset', function (assert) {
   assert.expect(1);
 
   this.inject.service('intl');
@@ -48,7 +52,7 @@ test('suppressWarnings unset', function(assert) {
   const instance = this.subject({
     warn() {
       assert.ok(true);
-    }
+    },
   });
 
   instance.getMessageFor('foobarbaz');
