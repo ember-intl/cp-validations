@@ -1,13 +1,23 @@
-<h2 id="title">ember-intl-cp-validations</h2>
+<h2 id='title'>@ember-intl/cp-validations</h2>
 
-<div class="email-validation">{{model.validations.attrs.email.message}}</div>
-<div class="emailConfirmation-validation">{{model.validations.attrs.emailConfirmation.message}}</div>
-<div class="password-validation">{{model.validations.attrs.password.message}}</div>
-<div class="passwordConfirmation-validation">{{model.validations.attrs.passwordConfirmation.message}}</div>
-<div class="username-validation">{{model.validations.attrs.username.message}}</div>
+<div class='email-validation'>
+  {{@model.validations.attrs.email.message}}
+</div>
+<div class='emailConfirmation-validation'>
+  {{@model.validations.attrs.emailConfirmation.message}}
+</div>
+<div class='password-validation'>
+  {{@model.validations.attrs.password.message}}
+</div>
+<div class='passwordConfirmation-validation'>
+  {{@model.validations.attrs.passwordConfirmation.message}}
+</div>
+<div class='username-validation'>
+  {{@model.validations.attrs.username.message}}
+</div>
 
-{{input id="email" value=model.email}}
-{{input id="emailConfirmation" value=model.emailConfirmation}}
-{{input id="password" value=model.password}}
-{{input id="passwordConfirmation" value=model.passwordConfirmation}}
-{{input id="username" value=model.username}}
+<Input id='email' @value={{@model.email}} />
+<Input id='emailConfirmation' @value={{@model.emailConfirmation}} />
+<Input id='password' @value={{@model.password}} />
+<Input id='passwordConfirmation' @value={{@model.passwordConfirmation}} />
+<Input id='username' @value={{@model.username}} />

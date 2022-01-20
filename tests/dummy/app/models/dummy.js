@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import { validator, buildValidations } from 'ember-cp-validations';
 
 var Validations = buildValidations({
@@ -30,7 +30,8 @@ var Validations = buildValidations({
   ],
 });
 
-export default Ember.Object.extend(Validations, {
+// eslint-disable-next-line ember/no-classic-classes
+export default EmberObject.extend(Validations, {
   username: '',
   password: '',
   email: '',

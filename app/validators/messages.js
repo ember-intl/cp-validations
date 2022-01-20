@@ -1,1 +1,1 @@
-export { default } from 'ember-intl-cp-validations/validators/messages';
+export { default } from '@ember-intl/cp-validations/validators/messages';

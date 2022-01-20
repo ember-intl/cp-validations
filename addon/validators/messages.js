@@ -1,11 +1,12 @@
-import Ember from 'ember';
+import { getOwner } from '@ember/application';
+import { warn } from '@ember/debug';
+import { inject as service } from '@ember/service';
+import { isEmpty } from '@ember/utils';
 import ValidatorsMessages from 'ember-cp-validations/validators/messages';
 
-const { get, getOwner, isEmpty } = Ember;
-
 export default ValidatorsMessages.extend({
-  intl: Ember.inject.service(),
-  warn: Ember.warn,
+  intl: service(),
+  warn,
   prefix: 'errors',
 
   init() {
@@ -19,19 +20,14 @@ export default ValidatorsMessages.extend({
   },
 
   _warn(msg, test, meta) {
-    if (
-      this._config &&
-      get(this._config, 'intl_cp_validations.suppressWarnings')
-    ) {
-      return;
-    }
+    if (this._config?.intl_cp_validations?.suppressWarnings) return;
 
     this.warn(msg, test, meta);
   },
 
   getDescriptionFor(attribute, options = {}) {
-    let intl = get(this, 'intl');
-    let key = `${get(this, 'prefix')}.description`;
+    let intl = this.intl;
+    let key = `${this.prefix}.description`;
     let foundCustom;
 
     if (!isEmpty(options.descriptionKey)) {
@@ -59,8 +55,8 @@ export default ValidatorsMessages.extend({
   },
 
   getMessageFor(type, options = {}) {
-    let key = get(options, 'messageKey') || `${get(this, 'prefix')}.${type}`;
-    let intl = get(this, 'intl');
+    let key = options.messageKey || `${this.prefix}.${type}`;
+    let intl = this.intl;
 
     if (intl && intl.exists(key)) {
       return this.formatMessage(intl.t(key, options));

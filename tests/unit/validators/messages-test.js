@@ -1,59 +1,50 @@
-import { moduleFor, test } from 'ember-qunit';
+import { getWarnings } from '@ember/test-helpers';
+import { setupTest } from 'ember-qunit';
+import { module, test } from 'qunit';
 
-moduleFor(
-  'ember-intl-cp-validations@validator:messages',
-  'Unit | Validators | messages',
-  {
-    unit: true,
-    needs: [
-      'service:intl',
-      'config:environment',
-      'translation:en-us',
-      'cldr:en',
-      'ember-intl@adapter:default',
-    ],
-  }
-);
+module('Unit | Validators | messages', function (hooks) {
+  setupTest(hooks);
 
-test('it exists', function (assert) {
-  assert.expect(1);
-  assert.ok(this.subject());
-});
+  const specifier = '@ember-intl/cp-validations@validator:messages';
 
-test('suppressWarnings set to true', function (assert) {
-  assert.expect(1);
-
-  this.register('config:environment', {
-    intl_cp_validations: {
-      suppressWarnings: true,
-    },
+  test('it exists', function (assert) {
+    assert.expect(1);
+    assert.ok(this.owner.lookup(specifier));
   });
 
-  this.inject.service('intl');
-  this.intl.setLocale('en-us');
-  let triggered = false;
+  test('suppressWarnings set to true', function (assert) {
+    assert.expect(1);
 
-  const instance = this.subject({
-    warn() {
-      triggered = true;
-    },
+    this.owner.register('config:environment', {
+      intl_cp_validations: {
+        suppressWarnings: true,
+      },
+    });
+
+    this.owner.lookup('service:intl').setLocale('en-us');
+
+    const instance = this.owner.lookup(specifier);
+    instance.getMessageFor('foobarbaz');
+
+    assert.deepEqual(getWarnings(), []);
   });
 
-  instance.getMessageFor('foobarbaz');
-  assert.notOk(triggered);
-});
+  test('suppressWarnings unset', function (assert) {
+    assert.expect(1);
 
-test('suppressWarnings unset', function (assert) {
-  assert.expect(1);
+    this.owner.lookup('service:intl').setLocale('en-us');
 
-  this.inject.service('intl');
-  this.intl.setLocale('en-us');
+    const instance = this.owner.lookup(specifier);
+    instance.getMessageFor('foobarbaz');
 
-  const instance = this.subject({
-    warn() {
-      assert.ok(true);
-    },
+    assert.deepEqual(getWarnings(), [
+      {
+        message:
+          '[ember-intl-cp-validations] Missing translation for validation key: errors.foobarbaz\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html',
+        options: {
+          id: 'ember-intl-cp-validations-missing-translation',
+        },
+      },
+    ]);
   });
-
-  instance.getMessageFor('foobarbaz');
 });
