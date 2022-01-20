@@ -59,5 +59,8 @@
     "after": [
       "ember-cp-validations"
     ]
+  },
+  "volta": {
+    "node": "14.18.3"
   }
 }
