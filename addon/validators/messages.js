@@ -1,11 +1,12 @@
-import Ember from 'ember';
 import ValidatorsMessages from 'ember-cp-validations/validators/messages';
-
-const { get, getOwner, isEmpty } = Ember;
+import { inject as service } from '@ember/service';
+import { warn } from '@ember/debug';
+import { getOwner } from '@ember/application';
+import { isEmpty } from '@ember/utils';
+import { get } from '@ember/object';
 
 export default ValidatorsMessages.extend({
-  intl: Ember.inject.service(),
-  warn: Ember.warn,
+  intl: service(),
   prefix: 'errors',
 
   init() {
@@ -23,7 +24,7 @@ export default ValidatorsMessages.extend({
       return;
     }
 
-    this.warn(msg, test, meta);
+    warn(msg, test, meta);
   },
 
   getDescriptionFor(attribute, options = {}) {
