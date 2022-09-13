@@ -1,29 +1,28 @@
 import { getOwner } from '@ember/application';
 import { warn } from '@ember/debug';
-import { get } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { isEmpty } from '@ember/utils';
 import ValidatorsMessages from 'ember-cp-validations/validators/messages';
 
 export default ValidatorsMessages.extend({
   intl: service(),
+
   prefix: 'errors',
 
   init() {
     this._super(...arguments);
 
-    let owner = getOwner(this);
+    const owner = getOwner(this);
 
     if (owner) {
-      this._config = owner.resolveRegistration('config:environment') || {};
+      this._config = owner.resolveRegistration('config:environment') ?? {};
     }
   },
 
   _warn(msg, test, meta) {
-    if (
-      this._config &&
-      get(this._config, 'intl_cp_validations.suppressWarnings')
-    ) {
+    const { suppressWarnings } = this._config?.intl_cp_validations ?? {};
+
+    if (suppressWarnings) {
       return;
     }
 
@@ -31,8 +30,9 @@ export default ValidatorsMessages.extend({
   },
 
   getDescriptionFor(attribute, options = {}) {
-    let intl = get(this, 'intl');
-    let key = `${get(this, 'prefix')}.description`;
+    const { intl, prefix } = this;
+
+    let key = `${prefix}.description`;
     let foundCustom;
 
     if (!isEmpty(options.descriptionKey)) {
@@ -60,8 +60,9 @@ export default ValidatorsMessages.extend({
   },
 
   getMessageFor(type, options = {}) {
-    let key = get(options, 'messageKey') || `${get(this, 'prefix')}.${type}`;
-    let intl = get(this, 'intl');
+    const { intl, prefix } = this;
+
+    const key = options.messageKey ?? `${prefix}.${type}`;
 
     if (intl && intl.exists(key)) {
       return this.formatMessage(intl.t(key, options));

@@ -26,9 +26,9 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
-    "test": "npm-run-all lint test:*",
+    "test": "ember test",
     "test:ember": "ember test",
-    "test:ember-compatibility": "ember try:each"
+    "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
   "dependencies": {
     "ember-cli-babel": "^7.26.11",

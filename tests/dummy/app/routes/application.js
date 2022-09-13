@@ -1,13 +1,15 @@
-import Ember from 'ember';
+import { getOwner } from '@ember/application';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  intl: Ember.inject.service(),
+export default class ApplicationRoute extends Route {
+  @service intl;
 
   beforeModel() {
     this.intl.setLocale('en-us');
-  },
+  }
 
   model() {
-    return this.container.lookup('model:dummy');
-  },
-});
+    return getOwner(this).lookup('model:dummy');
+  }
+}
