@@ -2,15 +2,18 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
-    ecmaFeatures: {
-      legacyDecorators: true,
+    requireConfigFile: false,
+    babelOptions: {
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+      ],
     },
   },
-  plugins: ['ember'],
+  plugins: ['ember', 'simple-import-sort'],
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
@@ -19,7 +22,11 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    curly: 'error',
+    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': 'error',
+  },
   overrides: [
     // node files
     {
@@ -28,11 +35,11 @@ module.exports = {
         './.prettierrc.js',
         './.template-lintrc.js',
         './ember-cli-build.js',
-        './index.js',
         './testem.js',
         './blueprints/*/index.js',
         './config/**/*.js',
-        './tests/dummy/config/**/*.js',
+        './lib/*/index.js',
+        './server/**/*.js',
       ],
       parserOptions: {
         sourceType: 'script',
@@ -43,6 +50,11 @@ module.exports = {
       },
       plugins: ['node'],
       extends: ['plugin:node/recommended'],
+      rules: {
+        // this can be removed once the following is fixed
+        // https://github.com/mysticatea/eslint-plugin-node/issues/77
+        'node/no-unpublished-require': 'off',
+      },
     },
     {
       // test files
