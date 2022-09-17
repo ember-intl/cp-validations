@@ -14,12 +14,16 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
-    'plugin:prettier/recommended',
+    // 'plugin:prettier/recommended',
   ],
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'ember/new-module-imports': 'off',
+    'ember/no-get': 'off',
+    'no-undef': 'off',
+  },
   overrides: [
     // node files
     {
@@ -48,6 +52,14 @@ module.exports = {
       // Test files:
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
+      rules: {
+        'ember/no-restricted-resolver-tests': 'off',
+        'ember/no-test-and-then': 'off',
+        'ember/no-test-module-for': 'off',
+        'ember/prefer-ember-test-helpers': 'off',
+        'qunit/no-arrow-tests': 'off',
+        'qunit/no-negated-ok': 'off',
+      },
     },
   ],
 };
