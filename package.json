@@ -10,15 +10,15 @@
     "i18n",
     "intl"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ember-intl/cp-validations.git"
+  },
   "license": "MIT",
   "author": "jason.mitchell.w@gmail.com",
   "directories": {
     "doc": "doc",
     "test": "tests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/ember-intl/ember-intl-cp-validations.git"
   },
   "scripts": {
     "build": "ember build",
@@ -50,10 +50,18 @@
     "ember-open-browser": "^0.5.1",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.14.1",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0"
   },
   "engines": {
     "node": ">= 10.*"
+  },
+  "volta": {
+    "node": "14.18.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
@@ -61,7 +69,19 @@
       "ember-cp-validations"
     ]
   },
-  "volta": {
-    "node": "14.18.3"
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }
