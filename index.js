@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-intl-cp-validations'
+  name: require('./package').name,
 };

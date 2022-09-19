@@ -96,7 +96,7 @@ To change the errors prefix key from `errors` to any other key, such as `validat
 ```js
 // app/validators/messages.js
 
-import ValidatorsMessages from 'ember-intl-cp-validations/validators/messages';
+import ValidatorsMessages from '@ember-intl/cp-validations/validators/messages';
 
 export default ValidatorsMessages.extend({
   prefix: 'validationErrors'
