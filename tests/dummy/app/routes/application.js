@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { getOwner } from '@ember/application';
 
 export default Ember.Route.extend({
 	intl: Ember.inject.service(),
@@ -8,6 +9,6 @@ export default Ember.Route.extend({
 	},
 
 	model() {
-		return this.container.lookup('model:dummy');
+		return getOwner(this).lookup('model:dummy');
 	}
 });
