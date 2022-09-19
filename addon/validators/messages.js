@@ -3,7 +3,6 @@ import { inject as service } from '@ember/service';
 import { warn } from '@ember/debug';
 import { getOwner } from '@ember/application';
 import { isEmpty } from '@ember/utils';
-import { get } from '@ember/object';
 
 export default ValidatorsMessages.extend({
   intl: service(),
@@ -20,10 +19,7 @@ export default ValidatorsMessages.extend({
   },
 
   _warn(msg, test, meta) {
-    if (
-      this._config &&
-      get(this._config, 'intl_cp_validations.suppressWarnings')
-    ) {
+    if (this._config?.intl_cp_validations?.suppressWarnings) {
       return;
     }
 
@@ -31,8 +27,8 @@ export default ValidatorsMessages.extend({
   },
 
   getDescriptionFor(attribute, options = {}) {
-    let intl = get(this, 'intl');
-    let key = `${get(this, 'prefix')}.description`;
+    let intl = this.intl;
+    let key = `${this.prefix}.description`;
     let foundCustom;
 
     if (!isEmpty(options.descriptionKey)) {
@@ -60,8 +56,8 @@ export default ValidatorsMessages.extend({
   },
 
   getMessageFor(type, options = {}) {
-    let key = get(options, 'messageKey') || `${get(this, 'prefix')}.${type}`;
-    let intl = get(this, 'intl');
+    let key = options.messageKey || `${this.prefix}.${type}`;
+    let intl = this.intl;
 
     if (intl && intl.exists(key)) {
       return this.formatMessage(intl.t(key, options));

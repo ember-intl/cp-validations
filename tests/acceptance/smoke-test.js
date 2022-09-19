@@ -5,7 +5,7 @@ import { module, test } from 'qunit';
 module('Acceptance: Smoke', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('basic translations', async (assert) => {
+  test('basic translations', async function (assert) {
     assert.expect(3);
     await visit('/');
 
@@ -20,7 +20,7 @@ module('Acceptance: Smoke', function (hooks) {
       .hasText(`This field must be a valid email address`);
   });
 
-  test('inline message', async (assert) => {
+  test('inline message', async function (assert) {
     assert.expect(2);
     await visit('/');
 
@@ -30,7 +30,7 @@ module('Acceptance: Smoke', function (hooks) {
     assert.dom('.password-validation').hasText(`oops, length is invalid`);
   });
 
-  test('translations with custom description', async (assert) => {
+  test('translations with custom description', async function (assert) {
     assert.expect(3);
     await visit('/');
 
@@ -46,7 +46,7 @@ module('Acceptance: Smoke', function (hooks) {
       .hasText(`Email addresses doesn't match email`);
   });
 
-  test('translations with descriptionKey', async (assert) => {
+  test('translations with descriptionKey', async function (assert) {
     await visit('/');
 
     assert
@@ -54,7 +54,7 @@ module('Acceptance: Smoke', function (hooks) {
       .hasText(`oops, Username length is invalid`);
   });
 
-  test('translation with messageKey', async (assert) => {
+  test('translation with messageKey', async function (assert) {
     await visit('/');
 
     assert
