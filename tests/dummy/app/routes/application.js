@@ -2,13 +2,13 @@ import Ember from 'ember';
 import { getOwner } from '@ember/application';
 
 export default Ember.Route.extend({
-	intl: Ember.inject.service(),
+  intl: Ember.inject.service(),
 
-	beforeModel() {
-		this.get('intl').setLocale('en-us');
-	},
+  beforeModel() {
+    this.get('intl').setLocale('en-us');
+  },
 
-	model() {
-		return getOwner(this).lookup('model:dummy');
-	}
+  model() {
+    return getOwner(this).lookup('model:dummy');
+  },
 });
