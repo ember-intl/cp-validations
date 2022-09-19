@@ -60,7 +60,7 @@ export default ValidatorsMessages.extend({
       return this.formatMessage(intl.t(key, options));
     }
 
-    this._warn(`[ember-intl-cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`, false, {
+    this._warn(`[@ember-intl/cp-validations] Missing translation for validation key: ${key}\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html`, false, {
       id: 'ember-intl-cp-validations-missing-translation'
     });
 

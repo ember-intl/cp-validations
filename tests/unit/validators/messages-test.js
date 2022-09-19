@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('ember-intl-cp-validations@validator:messages', 'Unit | Validators | messages', {
+moduleFor('@ember-intl/cp-validations@validator:messages', 'Unit | Validators | messages', {
   unit: true,
   needs: [
     'service:intl',
