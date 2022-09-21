@@ -2,14 +2,47 @@
 
 <h2 id="title">Welcome to @ember-intl/cp-validations</h2>
 
-<div class="email-validation">{{model.validations.attrs.email.message}}</div>
-<div class="emailConfirmation-validation">{{model.validations.attrs.emailConfirmation.message}}</div>
-<div class="password-validation">{{model.validations.attrs.password.message}}</div>
-<div class="passwordConfirmation-validation">{{model.validations.attrs.passwordConfirmation.message}}</div>
-<div class="username-validation">{{model.validations.attrs.username.message}}</div>
+<input
+  id="email"
+  value={{this.model.email}}
+  {{on "change" (fn this.update "email")}}
+/>
+<div class="email-validation">
+  {{this.model.validations.attrs.email.message}}
+</div>
 
-{{input id="email" value=model.email}}
-{{input id="emailConfirmation" value=model.emailConfirmation}}
-{{input id="password" value=model.password}}
-{{input id="passwordConfirmation" value=model.passwordConfirmation}}
-{{input id="username" value=model.username}}
+<input
+  id="emailConfirmation"
+  value={{this.model.emailConfirmation}}
+  {{on "change" (fn this.update "emailConfirmation")}}
+/>
+<div class="emailConfirmation-validation">
+  {{this.model.validations.attrs.emailConfirmation.message}}
+</div>
+
+<input
+  id="password"
+  value={{this.model.password}}
+  {{on "change" (fn this.update "password")}}
+/>
+<div class="password-validation">
+  {{this.model.validations.attrs.password.message}}
+</div>
+
+<input
+  id="passwordConfirmation"
+  value={{this.model.passwordConfirmation}}
+  {{on "change" (fn this.update "passwordConfirmation")}}
+/>
+<div class="passwordConfirmation-validation">
+  {{this.model.validations.attrs.passwordConfirmation.message}}
+</div>
+
+<input
+  id="username"
+  value={{this.model.username}}
+  {{on "change" (fn this.update "username")}}
+/>
+<div class="username-validation">
+  {{this.model.validations.attrs.username.message}}
+</div>
