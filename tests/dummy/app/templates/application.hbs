@@ -2,14 +2,62 @@
 
 <h2 id="title">Welcome to @ember-intl/cp-validations</h2>
 
-<div class="email-validation">{{model.validations.attrs.email.message}}</div>
-<div class="emailConfirmation-validation">{{model.validations.attrs.emailConfirmation.message}}</div>
-<div class="password-validation">{{model.validations.attrs.password.message}}</div>
-<div class="passwordConfirmation-validation">{{model.validations.attrs.passwordConfirmation.message}}</div>
-<div class="username-validation">{{model.validations.attrs.username.message}}</div>
+<label for="email">
+  <input
+    id="email"
+    type="email"
+    value={{this.model.email}}
+    {{on "change" (fn this.update "email")}}
+  />
+</label>
+<div class="email-validation">
+  {{this.model.validations.attrs.email.message}}
+</div>
 
-{{input id="email" value=model.email}}
-{{input id="emailConfirmation" value=model.emailConfirmation}}
-{{input id="password" value=model.password}}
-{{input id="passwordConfirmation" value=model.passwordConfirmation}}
-{{input id="username" value=model.username}}
+<label for="emailConfirmation">
+  <input
+    id="emailConfirmation"
+    type="email"
+    value={{this.model.emailConfirmation}}
+    {{on "change" (fn this.update "emailConfirmation")}}
+  />
+</label>
+<div class="emailConfirmation-validation">
+  {{this.model.validations.attrs.emailConfirmation.message}}
+</div>
+
+<label for="password">
+  <input
+    id="password"
+    type="password"
+    value={{this.model.password}}
+    {{on "change" (fn this.update "password")}}
+  />
+</label>
+<div class="password-validation">
+  {{this.model.validations.attrs.password.message}}
+</div>
+
+<label for="passwordConfirmation">
+  <input
+    id="passwordConfirmation"
+    type="password"
+    value={{this.model.passwordConfirmation}}
+    {{on "change" (fn this.update "passwordConfirmation")}}
+  />
+</label>
+<div class="passwordConfirmation-validation">
+  {{this.model.validations.attrs.passwordConfirmation.message}}
+</div>
+
+<label for="username">
+  <input
+    id="username"
+    type="text"
+    value={{this.model.username}}
+    {{on "change" (fn this.update "username")}}
+  />
+</label>
+<div class="username-validation">
+  {{this.model.validations.attrs.username.message}}
+</div>

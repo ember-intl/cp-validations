@@ -40,7 +40,7 @@ module('Unit | Validators | messages', function (hooks) {
     assert.deepEqual(getWarnings(), [
       {
         message:
-          '[@ember-intl/cp-validations] Missing translation for validation key: errors.foobarbaz\nhttp://offirgolan.github.io/ember-cp-validations/docs/messages/index.html',
+          '[@ember-intl/cp-validations] Missing translation for validation key: errors.foobarbaz\nhttps://adopted-ember-addons.github.io/ember-cp-validations/docs/messages/index.html',
         options: {
           id: 'ember-intl-cp-validations-missing-translation',
         },
