@@ -1,3 +1,4 @@
+# Changelog
 
 ## v5.0.0 (2022-09-19)
 
@@ -22,6 +23,3 @@
 - Sabin Hertanu ([@herzzanu](https://github.com/herzzanu))
 - Vasanth ([@vasind](https://github.com/vasind))
 - [@bekzod](https://github.com/bekzod)
-
-
-# Changelog
