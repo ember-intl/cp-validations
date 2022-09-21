@@ -1,7 +1,7 @@
 # @ember-intl/cp-validations
 
-[![npm Version][npm-badge]][npm]
-[![Build Status][travis-badge]][travis]
+[![CI](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml/badge.svg)](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/@ember-intl%2Fcp-validations.svg)](https://badge.fury.io/js/@ember-intl%2Fcp-validations)
 [![Ember Observer Score](https://emberobserver.com/badges/-ember-intl-cp-validations.svg)](https://emberobserver.com/addons/@ember-intl/cp-validations)
 
 Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
@@ -15,7 +15,9 @@ Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/
 
 ## Installation
 
-* `ember install @ember-intl/cp-validations`
+```
+ember install @ember-intl/cp-validations
+```
 
 ## Configuring
 
@@ -150,23 +152,22 @@ module.exports = function(environment) {
 }
 ```
 
-## Running
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Compatibility
+------------------------------------------------------------------------------
 
-## Running Tests
+* Ember.js v3.24 or above
+* Ember CLI v3.24 or above
+* Node.js v12 or above
 
-* `ember test`
-* `ember test --server`
 
-## Building
+Contributing
+------------------------------------------------------------------------------
 
-* `ember build`
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
 
-[npm]: https://www.npmjs.org/package/@ember-intl/cp-validations
-[npm-badge]: https://img.shields.io/npm/v/@ember-intl/cp-validations.svg?style=flat-square
-[travis]: https://travis-ci.com/ember-intl/cp-validations
-[travis-badge]: https://img.shields.io/travis/ember-intl/cp-validations/master.svg?style=flat-square
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
