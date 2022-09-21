@@ -57,6 +57,9 @@ module('Acceptance: Smoke', function (hooks) {
   test('translation with messageKey', async function (assert) {
     await visit('/');
 
+    await fillIn('#password', '1234');
+    await fillIn('#password', '12345');
+
     assert
       .dom('.passwordConfirmation-validation')
       .hasText(`Passwords doesn't match`);

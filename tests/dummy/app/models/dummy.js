@@ -1,5 +1,6 @@
 import EmberObject from '@ember/object';
 import { validator, buildValidations } from 'ember-cp-validations';
+import { tracked } from '@glimmer/tracking';
 
 var Validations = buildValidations({
   username: validator('length', {
@@ -30,9 +31,10 @@ var Validations = buildValidations({
   ],
 });
 
-// eslint-disable-next-line ember/no-classic-classes
-export default EmberObject.extend(Validations, {
-  username: '',
-  password: '',
-  email: '',
-});
+export default class extends EmberObject.extend(Validations) {
+  @tracked email = '';
+  @tracked emailConfirmation = '';
+  @tracked password = '';
+  @tracked passwordConfirmation = '';
+  @tracked username = '';
+}

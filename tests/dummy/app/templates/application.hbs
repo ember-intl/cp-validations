@@ -2,47 +2,62 @@
 
 <h2 id="title">Welcome to @ember-intl/cp-validations</h2>
 
-<input
-  id="email"
-  value={{this.model.email}}
-  {{on "change" (fn this.update "email")}}
-/>
+<label for="email">
+  <input
+    id="email"
+    type="email"
+    value={{this.model.email}}
+    {{on "change" (fn this.update "email")}}
+  />
+</label>
 <div class="email-validation">
   {{this.model.validations.attrs.email.message}}
 </div>
 
-<input
-  id="emailConfirmation"
-  value={{this.model.emailConfirmation}}
-  {{on "change" (fn this.update "emailConfirmation")}}
-/>
+<label for="emailConfirmation">
+  <input
+    id="emailConfirmation"
+    type="email"
+    value={{this.model.emailConfirmation}}
+    {{on "change" (fn this.update "emailConfirmation")}}
+  />
+</label>
 <div class="emailConfirmation-validation">
   {{this.model.validations.attrs.emailConfirmation.message}}
 </div>
 
-<input
-  id="password"
-  value={{this.model.password}}
-  {{on "change" (fn this.update "password")}}
-/>
+<label for="password">
+  <input
+    id="password"
+    type="password"
+    value={{this.model.password}}
+    {{on "change" (fn this.update "password")}}
+  />
+</label>
 <div class="password-validation">
   {{this.model.validations.attrs.password.message}}
 </div>
 
-<input
-  id="passwordConfirmation"
-  value={{this.model.passwordConfirmation}}
-  {{on "change" (fn this.update "passwordConfirmation")}}
-/>
+<label for="passwordConfirmation">
+  <input
+    id="passwordConfirmation"
+    type="password"
+    value={{this.model.passwordConfirmation}}
+    {{on "change" (fn this.update "passwordConfirmation")}}
+  />
+</label>
 <div class="passwordConfirmation-validation">
   {{this.model.validations.attrs.passwordConfirmation.message}}
 </div>
 
-<input
-  id="username"
-  value={{this.model.username}}
-  {{on "change" (fn this.update "username")}}
-/>
+<label for="username">
+  <input
+    id="username"
+    type="text"
+    value={{this.model.username}}
+    {{on "change" (fn this.update "username")}}
+  />
+</label>
 <div class="username-validation">
   {{this.model.validations.attrs.username.message}}
 </div>
