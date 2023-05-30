@@ -1,5 +1,27 @@
 # Changelog
 
+
+## v6.0.0 (2023-05-30)
+
+#### :boom: Breaking Change
+* [#99](https://github.com/ember-intl/cp-validations/pull/99) Update ember-cli to 4.8 (drops node v12) ([@fsmanuel](https://github.com/fsmanuel))
+* [#87](https://github.com/ember-intl/cp-validations/pull/87) Update ember-cli to v3.28 ([@fsmanuel](https://github.com/fsmanuel))
+* [#88](https://github.com/ember-intl/cp-validations/pull/88) Change import from 'ember-intl-cp-validations' to '@ember-intl/cp-validations' ([@fsmanuel](https://github.com/fsmanuel))
+
+#### :rocket: Enhancement
+* [#90](https://github.com/ember-intl/cp-validations/pull/90) Remove deprecations to support ember 4.x ([@fsmanuel](https://github.com/fsmanuel))
+
+#### :house: Internal
+* [#101](https://github.com/ember-intl/cp-validations/pull/101) Update release-it ([@fsmanuel](https://github.com/fsmanuel))
+* [#100](https://github.com/ember-intl/cp-validations/pull/100) Reroll yarn.lock ([@fsmanuel](https://github.com/fsmanuel))
+* [#99](https://github.com/ember-intl/cp-validations/pull/99) Update ember-cli to 4.8 (drops node v12) ([@fsmanuel](https://github.com/fsmanuel))
+* [#93](https://github.com/ember-intl/cp-validations/pull/93) Fix CHANGELOG.md ([@fsmanuel](https://github.com/fsmanuel))
+* [#89](https://github.com/ember-intl/cp-validations/pull/89) Run yarn-deduplicate && yarn ([@fsmanuel](https://github.com/fsmanuel))
+
+#### Committers: 1
+- Manuel Wiedenmann ([@fsmanuel](https://github.com/fsmanuel))
+
+
 ## v5.0.0 (2022-09-19)
 
 #### :boom: Breaking Change
