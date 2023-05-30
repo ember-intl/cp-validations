@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd @ember-intl/cp-validations`
+* `cd cp-validations`
 * `yarn install`
 
 ## Linting

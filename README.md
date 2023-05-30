@@ -10,6 +10,9 @@ Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/
 
 ## Requirements
 
+* Ember.js v3.28 or above
+* Ember CLI v3.28 or above
+* Node.js v14 or above
 * [`ember-intl`](https://github.com/yahoo/ember-intl) >= 2.0.0-rc.5
 * `ember-cp-validations` >= 2
 
@@ -151,13 +154,6 @@ module.exports = function(environment) {
   return ENV;
 }
 ```
-
-
-## Compatibility
-
-* Ember.js v3.24 or above
-* Ember CLI v3.24 or above
-* Node.js v12 or above
 
 
 ## Contributing
