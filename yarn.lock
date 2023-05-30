@@ -5870,10 +5870,10 @@ ember-compatibility-helpers@^1.1.2, ember-compatibility-helpers@^1.2.1:
     fs-extra "^9.1.0"
     semver "^5.4.1"
 
-ember-cp-validations@^4.0.0-beta.13:
-  version "4.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/ember-cp-validations/-/ember-cp-validations-4.0.0-beta.13.tgz#f521824beb72862c0bd3d8fc57d6871f12faa250"
-  integrity sha512-S+RwiN3iVNPKupULvxLvGN99a7zidiYWZQ65DaY6mA5CpgxH7jkDIP0e9G/hxLQTIAWdRmTNuFKpbRCj5PjkEg==
+ember-cp-validations@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cp-validations/-/ember-cp-validations-4.0.0.tgz#129a2672ca291cc7386f2024809f7845e7d8bd43"
+  integrity sha512-nZUwGxOtg7cu0xZb9ekEtv/pZoHMBThS5Ti3aQYY5lbeq9jQ67Kp8Rj0knq3wpQxUvIp6MQGiIQ2dD9NeP7/xQ==
   dependencies:
     ember-cli-babel "^7.26.10"
     ember-require-module "^0.4.0"
