@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.2
+
+### Patch Changes
+
+- [#108](https://github.com/ember-intl/cp-validations/pull/108) Required consumers to install ember-cp-validations and ember-intl ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.1
 
 ### Patch Changes
