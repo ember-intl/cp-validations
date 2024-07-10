@@ -1,8 +1,8 @@
 import EmberObject from '@ember/object';
-import { validator, buildValidations } from 'ember-cp-validations';
 import { tracked } from '@glimmer/tracking';
+import { buildValidations, validator } from 'ember-cp-validations';
 
-var Validations = buildValidations({
+const Validations = buildValidations({
   username: validator('length', {
     message: 'oops, {description} length is invalid',
     descriptionKey: 'errors.usernameDescription',

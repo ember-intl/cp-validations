@@ -2,5 +2,4 @@
 
 module.exports = {
   extends: 'recommended',
-  rules: {},
 };

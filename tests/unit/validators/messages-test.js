@@ -8,13 +8,10 @@ module('Unit | Validators | messages', function (hooks) {
   const specifier = '@ember-intl/cp-validations@validator:messages';
 
   test('it exists', function (assert) {
-    assert.expect(1);
     assert.ok(this.owner.lookup(specifier));
   });
 
   test('suppressWarnings set to true', function (assert) {
-    assert.expect(1);
-
     this.owner.register('config:environment', {
       intl_cp_validations: {
         suppressWarnings: true,
@@ -30,8 +27,6 @@ module('Unit | Validators | messages', function (hooks) {
   });
 
   test('suppressWarnings unset', function (assert) {
-    assert.expect(1);
-
     this.owner.lookup('service:intl').setLocale('en-us');
 
     const instance = this.owner.lookup(specifier);
