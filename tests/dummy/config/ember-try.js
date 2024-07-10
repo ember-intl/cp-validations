@@ -9,6 +9,16 @@ module.exports = async function () {
     usePnpm: true,
     scenarios: [
       {
+        name: 'ember-intl-6',
+        npm: {
+          devDependencies: {
+            'ember-intl': await latestVersion('ember-intl', {
+              version: '6',
+            }),
+          },
+        },
+      },
+      {
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {

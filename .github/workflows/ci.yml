@@ -67,6 +67,7 @@ jobs:
       fail-fast: false
       matrix:
         scenario:
+          - 'ember-intl-6'
           - 'ember-lts-3.28'
           - 'ember-lts-4.12'
           - 'ember-lts-5.4'
