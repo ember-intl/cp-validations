@@ -4,75 +4,96 @@ on:
   push:
     branches:
       - main
-  pull_request: {}
+  pull_request:
 
-concurrency:
-  group: ci-${{ github.head_ref || github.ref }}
-  cancel-in-progress: true
+env:
+  NODE_VERSION: 18
 
 jobs:
-  test:
-    name: "Tests"
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: 14.x
-          cache: yarn
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+          version: latest
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Lint
-        run: yarn lint
-      - name: Run Tests
-        run: yarn test:ember
+        run: pnpm lint
 
-  floating:
-    name: "Floating Dependencies"
+  test:
+    name: Test
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: 14.x
-          cache: yarn
-      - name: Install Dependencies
-        run: yarn install --no-lockfile
-      - name: Run Tests
-        run: yarn test:ember
+          version: latest
 
-  try-scenarios:
-    name: ${{ matrix.try-scenario }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test
+
+  test-compatibility:
+    name: Test compatibility
     runs-on: ubuntu-latest
-    needs: "test"
-    timeout-minutes: 10
-
     strategy:
       fail-fast: false
       matrix:
-        try-scenario:
-          - ember-lts-3.28
-          - ember-4.0
-          - ember-lts-4.4
-          - ember-release
-          - ember-beta
-          - ember-canary
-          - embroider-safe
-          # - embroider-optimized
-
+        scenario:
+          - 'ember-lts-3.28'
+          - 'ember-lts-4.12'
+          - 'ember-lts-5.4'
+          - 'ember-lts-5.8'
+          - 'ember-release'
+          - 'ember-beta'
+          - 'ember-canary'
+          - 'embroider-safe'
+          # - 'embroider-optimized'
+    timeout-minutes: 7
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: 14.x
-          cache: yarn
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Run Tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+          version: latest
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test:ember-compatibility ${{ matrix.scenario }} --- pnpm test

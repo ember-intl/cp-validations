@@ -1,8 +1,8 @@
-import ValidatorsMessages from 'ember-cp-validations/validators/messages';
-import { inject as service } from '@ember/service';
-import { warn } from '@ember/debug';
 import { getOwner } from '@ember/application';
+import { warn } from '@ember/debug';
+import { inject as service } from '@ember/service';
 import { isEmpty } from '@ember/utils';
+import ValidatorsMessages from 'ember-cp-validations/validators/messages';
 
 export default ValidatorsMessages.extend({
   intl: service(),
@@ -47,7 +47,7 @@ export default ValidatorsMessages.extend({
           false,
           {
             id: 'ember-intl-cp-validations-missing-custom-key',
-          }
+          },
         );
       }
     }
@@ -68,7 +68,7 @@ export default ValidatorsMessages.extend({
       false,
       {
         id: 'ember-intl-cp-validations-missing-translation',
-      }
+      },
     );
 
     return this._super(...arguments);
