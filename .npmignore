@@ -12,15 +12,17 @@
 /.git/
 /.github/
 /.gitignore
+/.pnpm-debug.log
 /.prettierignore
 /.prettierrc.js
 /.stylelintignore
 /.stylelintrc.js
 /.template-lintrc.js
-/.travis.yml
 /.watchmanconfig
+/CHANGELOG.md
 /CONTRIBUTING.md
 /ember-cli-build.js
+/pnpm-lock.yaml
 /testem.js
 /tests/
 /tsconfig.declarations.json
@@ -34,4 +36,5 @@
 /npm-shrinkwrap.json.ember-try
 /package.json.ember-try
 /package-lock.json.ember-try
+/pnpm-lock.yaml.ember-try
 /yarn.lock.ember-try
