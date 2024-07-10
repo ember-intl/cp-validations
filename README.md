@@ -10,7 +10,7 @@ Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-v
 * Ember.js v3.28 or above
 * Node.js v18 or above
 * `ember-cp-validations` v6
-* `ember-intl` v6
+* `ember-intl` v6 or above
 
 ## Installation
 
