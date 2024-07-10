@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.1
+
+### Patch Changes
+
+- [#107](https://github.com/ember-intl/cp-validations/pull/107) Updated .npmignore ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.0
 
 ### Major Changes
