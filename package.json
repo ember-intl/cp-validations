@@ -87,8 +87,11 @@
     "ember-intl": "^6.1.0 || ^7.0.0"
   },
   "peerDependenciesMeta": {
+    "ember-cp-validations": {
+      "optional": false
+    },
     "ember-intl": {
-      "optional": true
+      "optional": false
     }
   },
   "engines": {
