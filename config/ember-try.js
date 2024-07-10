@@ -1,33 +1,48 @@
 'use strict';
 
-const getChannelURL = require('ember-source-channel-url');
 const { embroiderSafe, embroiderOptimized } = require('@embroider/test-setup');
 
 module.exports = async function () {
+  const { default: latestVersion } = await import('latest-version');
+
   return {
-    useYarn: true,
+    usePnpm: true,
     scenarios: [
       {
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
+            '@ember/test-helpers': '2.9.4',
+            '@types/ember__test-helpers': '2.9.1',
+            '@types/ember-qunit': '6.1.1',
+            'ember-cli': '~3.28.0',
+            'ember-qunit': '6.0.0',
+            'ember-resolver': '11.0.1',
             'ember-source': '~3.28.0',
           },
         },
       },
       {
-        name: 'ember-4.0',
+        name: 'ember-lts-4.12',
         npm: {
           devDependencies: {
-            'ember-source': '~4.0.0',
+            'ember-source': '~4.12.0',
           },
         },
       },
       {
-        name: 'ember-lts-4.4',
+        name: 'ember-lts-5.4',
         npm: {
           devDependencies: {
-            'ember-source': '~4.4.0',
+            'ember-source': '~5.4.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-5.8',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.8.0',
           },
         },
       },
@@ -35,10 +50,7 @@ module.exports = async function () {
         name: 'ember-release',
         npm: {
           devDependencies: {
-            '@ember/string': '3.0.1',
-            'ember-source': await getChannelURL('release'),
-            'ember-auto-import': '^2',
-            webpack: '^5',
+            'ember-source': await latestVersion('ember-source'),
           },
         },
       },
@@ -46,10 +58,9 @@ module.exports = async function () {
         name: 'ember-beta',
         npm: {
           devDependencies: {
-            '@ember/string': '3.0.1',
-            'ember-source': await getChannelURL('beta'),
-            'ember-auto-import': '^2',
-            webpack: '^5',
+            'ember-source': await latestVersion('ember-source', {
+              version: 'beta',
+            }),
           },
         },
       },
@@ -57,28 +68,9 @@ module.exports = async function () {
         name: 'ember-canary',
         npm: {
           devDependencies: {
-            '@ember/string': '3.0.1',
-            'ember-source': await getChannelURL('canary'),
-            'ember-auto-import': '^2',
-            webpack: '^5',
-          },
-        },
-      },
-      {
-        name: 'ember-classic',
-        env: {
-          EMBER_OPTIONAL_FEATURES: JSON.stringify({
-            'application-template-wrapper': true,
-            'default-async-observers': false,
-            'template-only-glimmer-components': false,
-          }),
-        },
-        npm: {
-          devDependencies: {
-            'ember-source': '~3.28.0',
-          },
-          ember: {
-            edition: 'classic',
+            'ember-source': await latestVersion('ember-source', {
+              version: 'alpha',
+            }),
           },
         },
       },

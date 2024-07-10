@@ -1,28 +1,22 @@
-# @ember-intl/cp-validations
-
 [![CI](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml/badge.svg)](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/@ember-intl%2Fcp-validations.svg)](https://badge.fury.io/js/@ember-intl%2Fcp-validations)
 [![Ember Observer Score](https://emberobserver.com/badges/-ember-intl-cp-validations.svg)](https://emberobserver.com/addons/@ember-intl/cp-validations)
 
-Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
+# @ember-intl/cp-validations
 
-Using ember-i18n?  See: [jasonmit/ember-i18n-cp-validations](https://github.com/jasonmit/ember-i18n-cp-validations)
+Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
 
 ## Requirements
 
 * Ember.js v3.28 or above
-* Ember CLI v3.28 or above
-* Node.js v14 or above
-* [`ember-intl`](https://github.com/yahoo/ember-intl) >= 2.0.0-rc.5
-* `ember-cp-validations` >= 2
+* Node.js v18 or above
 
 ## Installation
 
-```
+```sh
 ember install @ember-intl/cp-validations
 ```
 
-## Configuring
+## Configuration
 
 Implement the following validation messages across your translations:
 
@@ -155,11 +149,9 @@ module.exports = function(environment) {
 }
 ```
 
-
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 ## License
 
