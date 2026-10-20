@@ -1,5 +1,5 @@
 module.exports = function () {
   return {
-    inputPath: 'tests/dummy/translations',
+    translationsDir: 'tests/dummy/translations',
   };
 };

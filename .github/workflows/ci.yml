@@ -58,24 +58,12 @@ jobs:
         run: pnpm test
 
 
-  test-compatibility:
-    name: Test compatibility
+  get-test-matrix:
+    name: Get test matrix
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        scenario:
-          - 'ember-intl-6'
-          - 'ember-lts-3.28'
-          - 'ember-lts-4.12'
-          - 'ember-lts-5.4'
-          - 'ember-lts-5.8'
-          - 'ember-release'
-          - 'ember-beta'
-          - 'ember-canary'
-          - 'embroider-safe'
-          # - 'embroider-optimized'
-    timeout-minutes: 7
+    outputs:
+      matrix: ${{ steps.set-test-matrix.outputs.matrix }}
+    timeout-minutes: 5
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v7
@@ -89,8 +77,38 @@ jobs:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
 
+      - id: set-test-matrix
+        name: Set test matrix
+        run: echo "matrix=$(pnpx @embroider/try list)" >> $GITHUB_OUTPUT
+
+
+  test-compatibility:
+    name: Test compatibility
+    needs: [get-test-matrix]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.get-test-matrix.outputs.matrix) }}
+    timeout-minutes: 5
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v7
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v7
+        with:
+          cache: 'pnpm'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Make file changes
+        run: pnpx @embroider/try apply ${{ matrix.name }}
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-lockfile
 
       - name: Test
-        run: pnpm test:ember-compatibility ${{ matrix.scenario }} --- pnpm test
+        env: ${{ matrix.env }}
+        run: pnpm test
