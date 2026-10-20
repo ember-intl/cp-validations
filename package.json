@@ -28,7 +28,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "release:changelog": "changeset version",
+    "release:prepare": "changeset version",
     "release:package": "changeset publish",
     "start": "ember serve",
     "test": "ember test --test-port=0",
@@ -94,8 +94,9 @@
       "optional": false
     }
   },
+  "packageManager": "pnpm@12.14.0",
   "engines": {
-    "node": "18.* || >= 20"
+    "node": "22.* || >= 24"
   },
   "ember": {
     "edition": "octane"
