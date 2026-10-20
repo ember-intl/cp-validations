@@ -1,25 +1,25 @@
 export default {
   packageManager: 'pnpm',
   scenarios: [
-      {
-        files: {
-          'tests/dummy/config/ember-intl.js': [
-            `module.exports = function () {`,
-            `  return {`,
-            `    inputPath: 'tests/dummy/translations',`,
-            `  };`,
-            `};`,
-            ``,
-          ].join('\n')
-        },
-        name: 'ember-intl-8',
-        npm: {
-          devDependencies: {
-            '@ember-intl/v1-compat': '^1.3.1',
-            'ember-intl': '^8.4.0',
-          },
+    {
+      files: {
+        'tests/dummy/config/ember-intl.js': [
+          `module.exports = function () {`,
+          `  return {`,
+          `    inputPath: 'tests/dummy/translations',`,
+          `  };`,
+          `};`,
+          ``,
+        ].join('\n'),
+      },
+      name: 'ember-intl-8',
+      npm: {
+        devDependencies: {
+          '@ember-intl/v1-compat': '^1.3.1',
+          'ember-intl': '^8.4.0',
         },
       },
+    },
     {
       name: 'ember-lts-4.12',
       npm: {

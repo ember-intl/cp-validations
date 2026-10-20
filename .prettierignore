@@ -3,11 +3,14 @@
 
 # compiled output
 /dist/
+/dist-for-testing/
 
 # misc
-/coverage/
 !.*
 .*/
+*.html
 
-# ember-try
-/.node_modules.ember-try/
+# specific to this package
+CONTRIBUTING.md
+README.md
+pnpm-lock.yaml

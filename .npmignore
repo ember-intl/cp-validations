@@ -1,40 +1,31 @@
 # compiled output
+/declarations/
 /dist/
+/dist-for-testing/
 /tmp/
 
 # misc
+/.changeset/
 /.editorconfig
 /.ember-cli
 /.env*
 /.eslintcache
-/.eslintignore
-/.eslintrc.js
 /.git/
 /.github/
 /.gitignore
+/.nvmrc
 /.pnpm-debug.log
 /.prettierignore
-/.prettierrc.js
-/.stylelintignore
-/.stylelintrc.js
-/.template-lintrc.js
+/.try.mjs
 /.watchmanconfig
 /CHANGELOG.md
 /CONTRIBUTING.md
 /ember-cli-build.js
-/pnpm-lock.yaml
-/testem.js
+/eslint.config.mjs
+/pnpm-workspace.yaml
+/prettier.config.mjs
+/testem.mjs
 /tests/
-/tsconfig.declarations.json
+/tsconfig.build.json
 /tsconfig.json
-/yarn-error.log
-/yarn.lock
 .gitkeep
-
-# ember-try
-/.node_modules.ember-try/
-/npm-shrinkwrap.json.ember-try
-/package.json.ember-try
-/package-lock.json.ember-try
-/pnpm-lock.yaml.ember-try
-/yarn.lock.ember-try

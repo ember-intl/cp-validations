@@ -1,5 +1,6 @@
 allowBuilds:
   core-js: false
+  unrs-resolver: false
 
 autoDedupe: true
 
@@ -11,11 +12,14 @@ lockfile:
 minimumReleaseAge: 720
 
 minimumReleaseAgeExclude:
-  - "@codemod-utils/*"
   - "@ember-intl/utils"
   - "@ember-intl/v1-compat"
   - "@ijlee2-frontend-configs/*"
   - "ember-intl"
   - "ember-testem"
+
+publicHoistPattern:
+  - "*eslint*"
+  - "*prettier*"
 
 verifyDepsBeforeRun: "warn"
