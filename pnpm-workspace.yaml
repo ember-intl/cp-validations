@@ -12,7 +12,10 @@ minimumReleaseAge: 720
 
 minimumReleaseAgeExclude:
   - "@codemod-utils/*"
+  - "@ember-intl/utils"
+  - "@ember-intl/v1-compat"
   - "@ijlee2-frontend-configs/*"
+  - "ember-intl"
   - "ember-testem"
 
 verifyDepsBeforeRun: "warn"

@@ -154,9 +154,9 @@ module.exports = function(environment) {
 
 ## Compatibility
 
-- `ember-cp-validations` v6
-- `ember-intl` v6 or v7
-- Ember.js v3.28 or above
+- `ember-cp-validations` v7
+- `ember-intl` v8 or above
+- Ember.js v4.12 or above
 - Node.js v22 or above
 
 
