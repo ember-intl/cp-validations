@@ -1,22 +1,18 @@
-[![CI](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml/badge.svg)](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml)
+[![This project uses GitHub Actions for continuous integration.](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml/badge.svg)](https://github.com/ember-intl/cp-validations/actions/workflows/ci.yml)
 [![Ember Observer Score](https://emberobserver.com/badges/-ember-intl-cp-validations.svg)](https://emberobserver.com/addons/@ember-intl/cp-validations)
+
 
 # @ember-intl/cp-validations
 
 Adds support for [ember-intl](https://github.com/yahoo/ember-intl) in ember-cp-validations
 
-## Requirements
-
-* Ember.js v3.28 or above
-* Node.js v18 or above
-* `ember-cp-validations` v6
-* `ember-intl` v6 or above
 
 ## Installation
 
 ```sh
 ember install @ember-intl/cp-validations
 ```
+
 
 ## Configuration
 
@@ -59,6 +55,7 @@ errors:
   url: "{description} must be a valid url"
 ```
 
+
 ### Translating Validator description
 
 To translate the description of a Validator specify the `descriptionKey` to match a key in your translations.
@@ -90,6 +87,7 @@ key:
     username: 'Användarnamn'
 ```
 
+
 ### Customizing the prefix
 
 To change the errors prefix key from `errors` to any other key, such as `validationErrors` you simply add the following to `app/validators/messages.js`.  Now just amend your translation files to be nested under the `validationErrors` object instead of `errors`.
@@ -103,6 +101,7 @@ export default ValidatorsMessages.extend({
   prefix: 'validationErrors'
 });
 ```
+
 
 ### Overriding default translation key
 
@@ -133,6 +132,7 @@ username:
   missing: '{description} saknas'
 ```
 
+
 ### Disabling Missing Translation Warnings
 
 To suppress console warnings for missing translations, you can do so by setting `intl_cp_validations.suppressWarnings` in `config/environment`;
@@ -151,10 +151,20 @@ module.exports = function(environment) {
 }
 ```
 
+
+## Compatibility
+
+- `ember-cp-validations` v6
+- `ember-intl` v6 or v7
+- Ember.js v3.28 or above
+- Node.js v22 or above
+
+
 ## Contributing
 
-See the [Contributing](CONTRIBUTING.md) guide for details.
+See the [Contributing](./CONTRIBUTING.md) guide for details.
+
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](./LICENSE.md).

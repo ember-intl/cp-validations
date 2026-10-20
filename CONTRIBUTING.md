@@ -45,16 +45,16 @@
 
 <details>
 
-<summary>Lint files</summary>
+<summary>Check and fix errors</summary>
 
-1. When you write code, please check that it meets the linting rules.
+1. As you write code, please check that it meets formatting and linting rules.
 
     ```sh
     # From the workspace root
     pnpm lint
     ```
 
-1. You can run `lint:fix` to automatically fix linting errors.
+1. You can run `lint:fix` to fix errors.
 
     ```sh
     # From the workspace root
@@ -98,27 +98,28 @@
 
 <summary>Publish packages (for admins)</summary>
 
-1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
+1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub. This token will be used to retrieve pull request information.
 
-1. Run the `release:changelog` script. This removes changesets, updates the package versions, and updates the `CHANGELOG`'s.
+1. Run the `release:prepare` script. This removes changesets, updates package versions, and updates `CHANGELOG`s.
 
     ```sh
     # From the workspace root
-    GITHUB_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:changelog
+    GITHUB_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:prepare
     ```
 
-1. The workspace root's version (e.g. `0.1.3`) is more of an identifier than a (semantic) version. We will use it to name the tag that will be published.
+    Note, `release:prepare` also updated the workspace root's version (e.g. from `0.1.1` to `0.1.2`). We will use it to name the tag that will be published.
 
-    In the root `package.json`, update the version following the "highest-version" formula:
+1. Review the file changes. Commit them in a branch, then open a pull request to merge the changes to the `main` branch.
 
+    ```sh
+    # From the workspace root
+    git checkout -b tag-0.1.2
+    git add .
+    git commit -m "Tagged 0.1.2"
+    git push origin tag-0.1.2
     ```
-    workspace root version = max(
-      max(all package versions),
-      workspace root version + 0.0.1,
-    );
-    ```
 
-1. [Create a tag](https://github.com/ember-intl/cp-validations/releases/new) and provide release notes. The tag name should match the package version, prefixed by the letter `v`. For example, `v1.0.0`.
+1. [Create a tag](https://github.com/ember-intl/cp-validations/releases/new) and provide release notes. The tag name should match the workspace root's version (e.g. `0.1.2`).
 
 1. Publish the package.
 
