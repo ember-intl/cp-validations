@@ -1,11 +1,4 @@
-'use strict';
-
-module.exports = {
-  test_page: 'tests/index.html?hidepassed',
-  disable_watching: true,
-  launch_in_ci: ['Chrome'],
-  launch_in_dev: ['Chrome'],
-  browser_start_timeout: 120,
+export default {
   browser_args: {
     Chrome: {
       ci: [
@@ -20,4 +13,9 @@ module.exports = {
       ].filter(Boolean),
     },
   },
+  browser_start_timeout: 120,
+  disable_watching: true,
+  launch_in_ci: ['Chrome'],
+  launch_in_dev: ['Chrome'],
+  test_page: 'tests/index.html?hidepassed&nolint',
 };

@@ -1,6 +1,7 @@
 # compiled output
 /declarations/
 /dist/
+/dist-for-testing/
 
 # dependencies
 /node_modules/
