@@ -1,5 +1,20 @@
 # Changelog
 
+## 8.0.0
+
+### Major Changes
+
+- [#110](https://github.com/ember-intl/cp-validations/pull/110) Dropped support for ember-cp-validations@v6, ember-intl@v6, ember-intl@v7, and ember-source@3.28 ([@ijlee2](https://github.com/ijlee2))
+- [#109](https://github.com/ember-intl/cp-validations/pull/109) Dropped support for Node 18 and 20 ([@ijlee2](https://github.com/ijlee2))
+
+### Minor Changes
+
+- [#111](https://github.com/ember-intl/cp-validations/pull/111) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#112](https://github.com/ember-intl/cp-validations/pull/112) Introduced trusted publishing ([@ijlee2](https://github.com/ijlee2))
+
 ## 7.0.2
 
 ### Patch Changes

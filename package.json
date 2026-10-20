@@ -1,6 +1,6 @@
 {
   "name": "@ember-intl/cp-validations",
-  "version": "7.0.2",
+  "version": "8.0.0",
   "description": "ember-intl support for ember-cp-validations",
   "keywords": [
     "ember-addon",
@@ -30,7 +30,7 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "release:prepare": "changeset version",
-    "release:package": "changeset publish",
+    "release:publish": "changeset publish",
     "start": "ember serve",
     "test": "pnpm build:test && ember-test --path dist-for-testing --port 0"
   },
