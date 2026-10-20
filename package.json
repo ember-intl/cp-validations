@@ -94,8 +94,9 @@
       "optional": false
     }
   },
+  "packageManager": "pnpm@12.14.0",
   "engines": {
-    "node": "18.* || >= 20"
+    "node": "22.* || >= 24"
   },
   "ember": {
     "edition": "octane"

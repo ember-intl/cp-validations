@@ -1,0 +1,18 @@
+allowBuilds:
+  core-js: false
+
+autoDedupe: true
+
+autoInstallPeers: false
+
+lockfile:
+  includeResolutionSettings: true
+
+minimumReleaseAge: 720
+
+minimumReleaseAgeExclude:
+  - "@codemod-utils/*"
+  - "@ijlee2-frontend-configs/*"
+  - "ember-testem"
+
+verifyDepsBeforeRun: "warn"
