@@ -121,11 +121,6 @@
 
 1. [Create a tag](https://github.com/ember-intl/cp-validations/releases/new) and provide release notes. The tag name should match the workspace root's version (e.g. `0.1.2`).
 
-1. Publish the package.
-
-    ```sh
-    # From the workspace root
-    pnpm release:package
-    ```
+1. Once the tag is created, the package is published to npm using trusted publishing.
 
 </details>
